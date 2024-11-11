@@ -1,3 +1,60 @@
-.welcome{
- background-image: url("https://i.pinimg.com/originals/5c/32/67/5c32670ac7a737973c25d203c74c3911.gif");
+/* Reset dei margini e padding di default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Impostazione del background della pagina con l'immagine */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(233, 226, 138);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.home{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Stile per il contenitore principale */
+.welcome {
+    text-align: center;
+    background-color: #ffffff; /* Sfondo bianco opaco */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-transform: uppercase;
+}
+
+/* Stile per l'elemento h1 */
+.welcome h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Stile per il bottone */
+.btnentra input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Colore giallo Pokemon */
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Cambia il colore del bottone quando si passa sopra */
+.btnentra input[type="submit"]:hover {
+    background-color: #ff9900;
 }

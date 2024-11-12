@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles01.css"> <!-- Referenza al file CSS corretto -->
 </head>
 <body>
+    <!-- Schermata principale -->
     <div id="info" class="info">
-        <div class="name" id="name"></div>
+        <div class="name" id="name">Welcome to the Pokemon World!</div>
         <div id="img" class="img"></div>
         <button type="submit" id="catch" class="catch">CATCH!</button>
     </div>
+
+    <!-- Schermata di animazione (GIF) che appare dopo il click -->
+    <div id="catchingScreen" class="catchingScreen">
+        <img src="https://i.pinimg.com/originals/77/0d/41/770d412bf74f350b0d8a402f43be9af1.gif" alt="Catching Pokemon">
+    </div>
+
+    <!-- Seconda schermata con due pulsanti: continua a catturare e vai a my pokemon -->
+    <div id="actionScreen" class="actionScreen">
+        <button id="continue" class="continue">Continua a catturare</button>
+        <button id="mypokemon" class="mypokemon">Vai a My Pokemon</button>
+    </div>
+
+    <!-- Barra di navigazione fissa in basso -->
     <div id="menu-barra" class="menu-barra">
         <div class="home" id="home">
-            <a href="home.html"></a>
+            <a href="home.html">Home</a>
         </div>
-        <div class="mypokemon" id="my pokemon">
-            <a href="mypokemon.html"></a>
+        <div class="mypokemon" id="mypokemon">
+            <a href="mypokemon.html">My Pokemon</a>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

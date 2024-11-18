@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles02.css">
+    <title>My Pokemon Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"></script>
 </head>
-<body>
-    <!-- Menu Barra Fissa in basso -->
-    <div id="menu-barra" class="menu-barra">
-        <div class="home" id="home">
-            <a href="home.html">Home</a>
-        </div>
-        <div class="mypokemon" id="mypokemon">
-            <a href="mypokemon.html">My Pokemon</a>
-        </div>
+<body class="bg-base-100">
+
+    <!-- Intestazione -->
+    <h1 class="text-center text-3xl font-bold my-6">La mia collezione di Pokémon</h1>
+
+    <!-- Lista dei Pokémon catturati -->
+    <div id="myPokemonList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+        <!-- Pokémon catturati saranno inseriti dinamicamente qui -->
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

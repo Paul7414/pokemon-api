@@ -8,6 +8,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 px-4 py-2">
+        <div class="flex-1">
+            <a href="index.html" class="btn btn-ghost text-xl">Home</a>
+        </div>
+        <div class="flex-none gap-2">
+            <div class="form-control">
+                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto text-lg" />
+            </div>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Avatar" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li><a class="hover:bg-gray-200">Profile</a></li>
+                    <li><a class="hover:bg-gray-200">Settings</a></li>
+                    <li><a class="hover:bg-gray-200">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
     <!-- Hero Section con Carousel -->
     <div class="hero min-h-screen relative" style="background-image: url(https://wallpapercave.com/wp/wp8813147.png);">
         <div class="hero-overlay bg-opacity-80"></div>
@@ -90,30 +114,6 @@
                         <a href="#slide1" class="btn btn-circle text-white bg-gray-800">❯</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
-    <div class="navbar bg-base-100 px-4 py-2">
-        <div class="flex-1">
-            <a href="index.html" class="btn btn-ghost text-xl">Home</a>
-        </div>
-        <div class="flex-none gap-2">
-            <div class="form-control">
-                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto text-lg" />
-            </div>
-            <div class="dropdown dropdown-end">
-                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                    <div class="w-10 rounded-full">
-                        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Avatar" />
-                    </div>
-                </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                    <li><a class="hover:bg-gray-200">Profile</a></li>
-                    <li><a class="hover:bg-gray-200">Settings</a></li>
-                    <li><a class="hover:bg-gray-200">Logout</a></li>
-                </ul>
             </div>
         </div>
     </div>

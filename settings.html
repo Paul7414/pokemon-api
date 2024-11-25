@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Barra di navigazione -->
+    <!-- Navbar -->
     <div class="navbar bg-base-100">
         <div class="flex-1">
             <a href="index.html" class="btn btn-ghost text-xl">Pokédex</a>
@@ -29,7 +29,6 @@
             <select id="themeSelector" class="select select-bordered w-full max-w-xs">
                 <option value="light">Chiaro</option>
                 <option value="dark">Scuro</option>
-                <option value="luxury">Luxury</option>
             </select>
         </div>
 
@@ -50,41 +49,48 @@
     </div>
 
     <script>
-        // Cambia tema
-        const themeSelector = document.getElementById('themeSelector');
-        themeSelector.addEventListener('change', () => {
-            const selectedTheme = themeSelector.value;
-            document.documentElement.setAttribute('data-theme', selectedTheme);
-            localStorage.setItem('selectedTheme', selectedTheme);
-        });
+// Cambia tema e applica a tutto il sito
+themeSelector.addEventListener('change', () => {
+    const selectedTheme = themeSelector.value;
+    document.documentElement.setAttribute('data-theme', selectedTheme); // Cambia tema sul <html>
+    localStorage.setItem('selectedTheme', selectedTheme); // Salva il tema selezionato
+});
 
-        // Abilita/disabilita notifiche
-        const notificationsToggle = document.getElementById('notificationsToggle');
-        notificationsToggle.addEventListener('change', () => {
-            const notificationsEnabled = notificationsToggle.checked;
-            localStorage.setItem('notificationsEnabled', notificationsEnabled);
-            alert(`Notifiche ${notificationsEnabled ? 'abilitate' : 'disabilitate'}`);
-        });
+// Abilita/disabilita notifiche
+notificationsToggle.addEventListener('change', () => {
+    const notificationsEnabled = notificationsToggle.checked;
+    localStorage.setItem('notificationsEnabled', notificationsEnabled);
+});
 
-        // Reset dati
-        function resetData() {
-            if (confirm('Sei sicuro di voler resettare tutti i dati salvati?')) {
-                localStorage.clear();
-                alert('Dati resettati con successo!');
-            }
-        }
+// Modifica la funzione alert solo se notifiche sono abilitate
+function customAlert(message) {
+    const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'true';
+    if (notificationsEnabled) {
+        alert(message);
+    }
+}
 
-        // Carica le impostazioni salvate
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('selectedTheme');
-            if (savedTheme) {
-                themeSelector.value = savedTheme;
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            }
+// Reset dati (usa customAlert)
+function resetData() {
+    if (confirm('Sei sicuro di voler resettare tutti i dati salvati?')) {
+        localStorage.clear();
+        customAlert('Dati resettati con successo!');
+        window.location.reload();
+    }
+}
 
-            const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'true';
-            notificationsToggle.checked = notificationsEnabled;
-        });
+// Carica le impostazioni salvate al caricamento della pagina
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+        themeSelector.value = savedTheme;
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'true';
+    notificationsToggle.checked = notificationsEnabled;
+});
+
     </script>
 
 </body>
